@@ -1,3 +1,4 @@
+import { browserStorage } from '../services/api';
 import { useState } from 'react';
 import { Leaf } from 'lucide-react';
 
@@ -31,7 +32,11 @@ export default function LoginPage({ onLogin }) {
         </div>
 
         <h1 style={styles.heading}>Welcome</h1>
-        <p style={styles.subheading}>Enter your details to access your workspace.</p>
+        <p style={styles.subheading}>
+          {browserStorage
+            ? 'Choose a local workspace. Your name and BT ID stay in this browser; this is not a secure account login.'
+            : 'Enter your details to access your workspace.'}
+        </p>
 
         <form onSubmit={handleSubmit} noValidate>
           <div style={styles.fieldGroup}>
@@ -44,7 +49,10 @@ export default function LoginPage({ onLogin }) {
               className="form-control"
               placeholder="e.g. Riya Sharma"
               value={name}
-              onChange={(e) => { setName(e.target.value); setError(''); }}
+              onChange={(e) => {
+                setName(e.target.value);
+                setError('');
+              }}
               autoFocus
               autoComplete="name"
             />
@@ -60,20 +68,17 @@ export default function LoginPage({ onLogin }) {
               className="form-control"
               placeholder="e.g. BT22CS001"
               value={btId}
-              onChange={(e) => { setBtId(e.target.value); setError(''); }}
+              onChange={(e) => {
+                setBtId(e.target.value);
+                setError('');
+              }}
               autoComplete="off"
             />
           </div>
 
-          {error && (
-            <p style={styles.errorMsg}>{error}</p>
-          )}
+          {error && <p style={styles.errorMsg}>{error}</p>}
 
-          <button
-            type="submit"
-            className="btn btn-primary"
-            style={styles.submitBtn}
-          >
+          <button type="submit" className="btn btn-primary" style={styles.submitBtn}>
             Continue to Workspace
           </button>
         </form>

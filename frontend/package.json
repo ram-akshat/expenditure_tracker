@@ -10,6 +10,7 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@electric-sql/pglite": "^0.3.16",
     "bootstrap": "^5.3.8",
     "lucide-react": "^0.548.0",
     "react": "^19.2.0",
@@ -17,6 +18,7 @@
     "recharts": "^3.3.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.65.1",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
     "@vitejs/plugin-react": "^5.1.0",

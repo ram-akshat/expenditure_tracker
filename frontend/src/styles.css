@@ -1381,3 +1381,14 @@ main {
     scroll-behavior: auto !important;
   }
 }
+
+.storage-notice {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #65755d;
+  background: #edf3e7;
+  border: 1px solid #dfe8d7;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 22px;
+}

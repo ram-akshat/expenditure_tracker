@@ -2,6 +2,16 @@
 
 Personal income, expenses, budgets, and spending analytics, built with React, Bootstrap, Express, and PostgreSQL. This is a single-user local application; authentication is outside the initial project scope.
 
+## Live GitHub Pages version
+
+https://SutikshanUpman.github.io/expenditure_tracker/
+
+The hosted version runs PostgreSQL in the browser using PGlite and saves transactions and budgets in IndexedDB, separately for each BT ID on that browser. The name/BT ID form selects a local workspace; it is not secure authentication. Data is not synced between devices. Clearing site data removes records; use CSV export for backups.
+
+The original Express/PostgreSQL server mode remains available below. Both modes use the same SQL queries and validation from `shared/`. The Pages build has no backend server or database credentials.
+
+`npm run build:pages` builds for the repository subpath. `.github/workflows/pages.yml` runs the tests, builds the static app, tests browser persistence with Chromium, and deploys to GitHub Pages on pushes to main.
+
 ## Run with sample data
 
 Requires Node.js 22.12+.

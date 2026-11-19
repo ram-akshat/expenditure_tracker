@@ -16,7 +16,7 @@ import {
   RefreshCw,
 } from 'lucide-react';
 import { useResource } from './hooks/useResource';
-import { exportCsv } from './services/api';
+import { browserStorage, exportCsv } from './services/api';
 import { EntryForm, DeleteDialog } from './components/Forms';
 import { today, monthLabel } from './components/Common';
 import Dashboard from './pages/Dashboard';
@@ -149,6 +149,12 @@ function AppShell({ studentName }) {
           </span>
         </header>
         <main id="main-content">
+          {browserStorage && (
+            <div className="storage-notice" role="note">
+              Saved only in this browser, under your BT ID. Use CSV export for backups. Clearing
+              site data removes saved records.
+            </div>
+          )}
           <div className="page-heading">
             <div>
               <span className="eyebrow">YOUR MONEY, IN FOCUS</span>

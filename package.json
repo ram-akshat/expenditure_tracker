@@ -13,7 +13,9 @@
     "db:setup": "npm run db:setup -w backend",
     "test": "npm test -w backend && npm test -w frontend",
     "demo": "concurrently -k -n api,web \"node backend/scripts/demo-server.js\" \"npm run dev -w frontend\"",
-    "format": "prettier --write \"frontend/src/**/*.{js,jsx,css}\" \"frontend/*.{js,json,html}\" \"backend/**/*.js\" \"*.{json,yaml}\" \".github/**/*.yml\""
+    "format": "prettier --write \"frontend/src/**/*.{js,jsx,css}\" \"frontend/*.{js,json,html}\" \"backend/**/*.js\" \"*.{json,yaml}\" \".github/**/*.yml\"",
+    "build:pages": "npm run build -w frontend -- --mode pages",
+    "test:pages": "playwright test --config frontend/playwright.config.js"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",
@@ -21,5 +23,6 @@
   },
   "engines": {
     "node": ">=22.12"
-  }
+  },
+  "type": "module"
 }
