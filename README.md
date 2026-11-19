@@ -35,7 +35,7 @@ npm run db:setup
 npm run dev
 ```
 
-Open http://127.0.0.1:5173. The API runs at http://localhost:5000. Database setup is safe to repeat. To add optional sample records to a fresh database, run `npm run db:setup -w backend -- --demo` once.
+Open http://127.0.0.1:5173. Database setup is safe to repeat. To add optional sample records to a fresh database, run `npm run db:setup -w backend -- --demo` once.
 
 ## Docker
 
